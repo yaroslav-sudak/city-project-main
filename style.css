@@ -1,0 +1,346 @@
+/* * Fonts */
+/* LibreBaskerville */
+/* LibreBaskerville Regular */
+@font-face {
+  font-family: "LibreBaskerville";
+  src: url(./fonts/LibreBaskerville/LibreBaskerville-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+/* LibreBaskerville Bold */
+@font-face {
+  font-family: "LibreBaskerville";
+  src: url(./fonts/LibreBaskerville/LibreBaskerville-Bold.ttf);
+  font-style: normal;
+  font-weight: bold;
+}
+/* LibreBaskerville Italic */
+@font-face {
+  font-family: "LibreBaskerville";
+  src: url(./fonts/LibreBaskerville/LibreBaskerville-Italic.ttf);
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Teko */
+/* Teko Regular */
+@font-face {
+  font-family: "Teko";
+  src: url(./fonts/Teko/Teko-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Teko Bold */
+@font-face {
+  font-family: "Teko";
+  src: url(./fonts/Teko/Teko-Bold.ttf);
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* KdamThmorPro */
+@font-face {
+  font-family: "KdamThmorPro";
+  src: url(./fonts/KdamThmorPro/KdamThmorPro-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Kenia */
+@font-face {
+  font-family: "Kenia";
+  src: url(./fonts/Kenia/Kenia-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* * Styles */
+body {
+  background-color: #0f1418;
+  font-family: LibreBaskerville;
+  color: #dbd5cf;
+  font-size: 20px;
+}
+
+::-webkit-scrollbar {
+  width: .6em;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, .6);
+  background-color: #0f1418;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #253a49;
+  border-radius: 50px;
+}
+
+a {
+  color: #dbd5cf;
+}
+
+.header__wrapper {
+  border-bottom: 1px solid #ffffff2f;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+  height: 100px;
+  width: 100%;
+}
+
+.header__logo {
+  font-family: Kenia;
+  margin-left: 70px;
+  font-size: 68px;
+}
+
+.navigation__list {
+  flex-direction: row;
+  margin-right: 70px;
+  display: flex;
+  
+}
+
+.navigation__item {
+  font-family: KdamThmorPro;
+  margin-right: 60px;
+  position: relative;
+  font-size: 18px;
+}
+
+.navigation__item::after {
+  transition: 0.2s cubic-bezier(0.51, 0.93, 0.28, 0.7);
+  background-color: #ffc467;
+  position: absolute;
+  bottom: -6px;
+  content: "";
+  height: 3px;
+  width: 0%;
+  left: 0;
+}
+
+.navigation__item:hover::after {
+  width: 100%;
+}
+
+.navigation__item:last-child {
+  margin-right: 0;
+}
+
+.navigation__item--active > a {
+  pointer-events: none;
+  color: #ffc467;
+}
+
+.navigation__item--active:hover::after {
+  display: none;
+}
+
+.nav-menu {
+  background-color: #0f1418;
+  transition: .4s;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 2vw;
+  position: fixed;
+  display: none;
+  height: 100%;
+  width: 60vw;
+  z-index: 2;
+  right: 0;
+  top: 0;
+}
+
+.nav-menu--hidden {
+  right: -64vw;
+}
+
+.nav-menu--hidden+.nav-menu__background {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.nav-menu__item {
+  margin-bottom: 25px;
+}
+
+.nav-menu__item--active>.nav-menu__link {
+  color: #ffc467;
+}
+
+.nav-menu__button {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  background-color: #0f1418;
+  position: absolute;
+  height: 40px;
+  padding: 4px;
+  width: 40px;
+  left: -48px;
+  top: 26px;
+}
+
+.nav-menu__background {
+  background-color: #222222;
+  position: absolute;
+  transition: .4s;
+  height: 100%;
+  opacity: .7;
+  width: 100%;
+  z-index: 1;
+  left: 0;
+  top: 0;
+}
+
+/* * Banner */
+.banner__wrapper {
+  flex-direction: column;
+  margin: 0 6vw;
+  display: flex;
+}
+
+.banner__background-image {
+  margin: 100px 60px 0;
+  pointer-events: none;
+  border-radius: 5em;
+  align-self: center;
+  position: absolute;
+  max-width: 1600px;
+  filter: blur(3px);
+  overflow: hidden;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.banner__background-image > img {
+  max-width: 1600px;
+  width: 100%;
+}
+
+.banner__title {
+  font-family: KdamThmorPro;
+  margin-top: 114px;
+  font-size: 106px;
+}
+
+.banner__subtitle {
+  max-width: 680px;
+  margin-top: 30px;
+}
+
+/* * Content */
+.banner__content {
+  flex-direction: column;
+  margin-left: 360px;
+  margin-top: 60px;
+  max-width: 1200px;
+  text-align: end;
+  align-self: end;
+  display: flex;
+}
+
+.content__title {
+  font-family: KdamThmorPro;
+  font-size: 46px;
+}
+
+.content__text {
+  margin-top: 80px;
+}
+
+/* * Timeline */
+.timeline {
+  font-family: KdamThmorPro;
+  position: absolute;
+  top: 560px;
+}
+.timeline__item {
+  margin-bottom: 100px;
+  position: relative;
+  display: flex;
+}
+
+.timeline__item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline__item::before {
+  background-color: #dbd5cf;
+  align-self: center;
+  position: absolute;
+  border-radius: 50%;
+  content: "";
+  height: 7px;
+  left: -24px;
+  width: 7px;
+}
+
+.timeline__item--active > a {
+  pointer-events: none;
+  color: #ffc467;
+}
+
+.timeline__item--active::before {
+  border: 5px solid rgb(77, 21, 5);
+  background-color: #ff3600;
+  margin-left: -5px;
+}
+
+@media only screen and (max-width: 1400px) {
+  .header__logo {
+    font-size: 56px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .header__logo {
+    font-size: 46px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .banner {
+    font-size: 18px;
+  }
+
+  .header__logo {
+    margin-left: 30px;
+  }
+
+  .navigation__list {
+    margin-right: 20px;
+  }
+
+  .banner__title {
+    font-size: 4em;
+  }
+
+  .content__title {
+    font-size: 2em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    display: none;
+  }
+
+  .header__logo {
+    margin-bottom: 30px;
+    margin-left: 0;
+  }
+
+  .nav-menu {
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .header__wrapper {
+    height: 60px;
+  }
+}

@@ -1,0 +1,97 @@
+.banner__wrapper {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: space-between;
+  padding-top: 50px;
+  column-gap: 3%;
+  display: grid;
+  row-gap: 7%;
+}
+.person {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+.person:nth-child(4n) {
+  margin-right: 0;
+}
+
+.person__image {
+  justify-content: center;
+  border-radius: 15px;
+  max-height: 25vw;
+  max-width: 17vw;
+  overflow: hidden;
+  display: flex;
+}
+
+img {
+  height: 100%;
+}
+
+.name {
+  font-family: KdamThmorPro;
+  margin-top: 10px;
+}
+
+.pop-up {
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  transition: .3s;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  left: 0;
+  top: 0;
+}
+
+.pop-up__background {
+  background-color: #222222;
+  position: absolute;
+  opacity: 0.7;
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+
+.pop-up__iframe {
+  border-radius: 65px;
+  height: 85vh;
+  width: 90vw;
+  z-index: 1;
+}
+
+.hidden {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.hidden .pop-up__iframe {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .banner__wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 7%;
+  }
+
+  .person__image {
+    max-height: 35vw;
+    max-width: 25vw;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .banner__wrapper {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 3%;
+  }
+
+  .person__image {
+    max-height: 60vw;
+    max-width: 35vw;
+  }
+}
